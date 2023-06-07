@@ -1,0 +1,25 @@
+version: '3.9'
+
+services:
+
+    app:
+        build: .
+        # command: uvicorn main:app --host 0.0.0.0 --port 8000 --workers 4
+        volumes:
+            - .:/code
+        container_name: backend-rooms
+        ports:
+            - 8000:8000
+
+
+    # nginx:
+    #     build: ./nginx
+
+    #     ports:
+    #         - 80:80
+    #         - 8000:8000
+            
+    #     depends_on:
+    #         - app
+
+    

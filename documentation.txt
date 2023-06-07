@@ -1,0 +1,68 @@
+----------- DOCUMENTATION FOR ROOMS-----------
+
+BASE URL -> http://3.95.65.230:8000/
+
+End Points:
+1) create_room/
+
+Type - POST
+
+Content-Type - application/json
+
+Headers
+
+Authorization -> BEARER {ACCESS TOKEN}
+
+Body
+
+For Public ->
+
+{
+    "title":str,
+    "schedule":str,
+    "private":bool
+}
+
+Example
+{
+    "title":"test8",
+    "schedule":"test10",
+    "private":false
+}
+
+For Private ->
+
+{
+    "title":str,
+    "schedule":str,
+    "private":bool,
+    "users":list of str (listener_user_id)
+}
+
+Example
+{
+    "title":"test8",
+    "schedule":"test10",
+    "private":false,
+    "users":['60a6a3915256ffa1315318be']
+}
+
+2) get_room/{room_code}
+
+Type - GET
+
+Example - 
+
+GET http://3.95.65.230:8000/get_room/mrinmaybhattacharyya_test8_test9
+
+3) get_all_room/
+
+Type - GET
+
+Headers
+
+Authorization -> BEARER {ACCESS TOKEN}
+
+Example - 
+
+GET http://3.95.65.230:8000/get_all_room/
